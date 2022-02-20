@@ -1,0 +1,54 @@
+﻿@model Opdracht2.ViewModels.BrewerySearchVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<partial name="_DropdownMenu" />
+
+<hr  />
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Beer.Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beer.Alcohol)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beer.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beer.BrouwernrNavigation.Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Beer.SoortnrNavigation.Soortnaam)
+            </th>
+          
+        </tr>
+    </thead>
+    <tbody>
+    @foreach(var beer in Model.Beers)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelAdult => beer.Naam)
+            </td>
+             <td>
+                @Html.DisplayFor(modelAdult => beer.Alcohol)
+            </td>
+            <td>
+                @Html.DisplayFor(modelAdult => beer.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelAdult => beer.BrouwernrNavigation.Naam)
+            </td>
+            <td>
+                @Html.DisplayFor(modelAdult => beer.SoortnrNavigation.Soortnaam)
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

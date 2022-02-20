@@ -1,0 +1,25 @@
+﻿@model Opdracht2.ViewModels.BrewerySearchVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Lijst bieren van Brouwers</h1>
+
+
+<div class = "col-md-7">
+    <form asp-action="Index" method = "post">
+       <div class = "form">
+            <label class = "fw-bold col-md-3"  asp-for="Beer.Brouwernr">Brouwers</label>
+            <select class = "col-md-4" asp-for="Beer.Brouwernr" asp-items="@Model.LijstvanBrouwerijen" class="form-select">
+                <option disabled> </option>
+            </select>
+       </div>
+       <br />
+        <div class= >
+              <input id="submit" class= "btn btn-primary" type = "submit" value="Show Beers"/>
+        </div>
+    </form>
+</div>
+
